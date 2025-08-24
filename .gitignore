@@ -1,0 +1,47 @@
+# ------------------------
+# STM32CubeIDE / CubeMX
+# ------------------------
+/Debug/
+/Release/
+/build/
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+*.srec
+
+# IDE files (can be regenerated)
+*.launch
+*.settings/
+*.mxproject
+*.project
+*.cproject
+
+# ------------------------
+# KiCad
+# ------------------------
+# Backups
+*.bak
+*.bck
+*-backups/
+
+# Cache files
+*.kicad_prl
+*.kicad_sch-bak
+*.kicad_pcb-bak
+fp-info-cache
+sym-lib-table-bak
+
+# Auto-generated netlists & reports
+*.net
+*.xml
+
+# ------------------------
+# OS / Editor junk
+# ------------------------
+.DS_Store
+Thumbs.db
+*.swp
