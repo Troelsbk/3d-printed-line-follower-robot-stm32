@@ -2572,6 +2572,12 @@
 		(color 0 0 0 0)
 		(uuid "7e2a0802-e71c-475d-894e-919aff150deb")
 	)
+	(junction
+		(at 124.46 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d7ece985-2090-4294-8ad2-b8dac782eb81")
+	)
 	(no_connect
 		(at 127 88.9)
 		(uuid "12db3ed2-80e2-4cc5-afae-ce1ba504fb9d")
@@ -4859,6 +4865,72 @@
 			(project "line_follower"
 				(path "/bd8a75cf-984f-4cb2-9f9a-71d40c52f87c"
 					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 124.46 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "88069f57-a658-409f-a227-73f8a3c8ed19")
+		(property "Reference" "#PWR017"
+			(at 124.46 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 122.174 63.754 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 124.46 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cf0f24fc-c0b9-4d5b-b891-ea9d2344662d")
+		)
+		(instances
+			(project "KiCad"
+				(path "/bd8a75cf-984f-4cb2-9f9a-71d40c52f87c"
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
