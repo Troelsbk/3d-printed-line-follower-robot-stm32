@@ -11,16 +11,12 @@ This repository contains the design files, embedded firmware, and hardware docum
 
 ## 1. System Overview
 The robot is designed with a modular architecture separating:
-- Mechanical structure 
-- Power distribution
-- Sensor acquisition
-- Motor control
-- Steering state machine
 
 <p align="center">
   <img src="images/LF_front.JPG" width="400">
   <img src="images/LF_top.JPG" width="400">
 </p>
+
 ---
 
 ## 2. Mechanical Design
@@ -74,16 +70,39 @@ A detailed schematic of the control electronics is shown below:
 The motor power stage, including the voltage-drop diodes and H-bridge driver connections, is illustrated in the following schematic:
 
 <p align="center">
-  <img src="images/motor_circuit.png" width="800">
+  <img src="images/motor_circuit.png" width="500">
 </p>
 
 ---
 
-## 7. Embedded Controller (STM32 Version)
+## 7. Control Logic
 An STM32 Nucleo-F042K6 development board was used as the main controller for this project.  
-Motor control logic was implemented as a non-blocking state machine to ensure responsive sensor handling and consistent PWM timing.
+Motor actuation was implemented as a non-blocking state machine to ensure deterministic PWM updates and responsive sensor handling under all operating conditions.
+
+The high-level control behavior is modeled as a finite state machine, illustrated below:
+
+<p align="center">
+  <img src="images/lf_state_machine.jpg" width="800">
+</p>
+
+The LED indicators were arranged such that only one LED could be active at any given time, providing a direct visual representation of the current control state.
+
+On the microcontroller, the state machine is represented using an enumeration structure, shown below:
+
+<p align="center">
+  <img src="images/c_enum_state_machine.jpg" width="200">
+</p>
+
+State transitions are driven by the sensor-evaluation function, which maps the four digital IR sensor inputs to the appropriate motor-control state:
+
+<p align="center">
+  <img src="images/lf_get_direction_func.jpg" width="800">
+</p>
+
+The specific PWM duty cycles for each turning mode were determined empirically through iterative testing to achieve smooth and stable motion.
 
 The complete firmware implementation is available in the [Firmware](Firmware/) directory.
+
 
 ---
 
